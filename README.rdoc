@@ -1,0 +1,31 @@
+App developed on Ruby on Rails
+Database : Postgresql
+
+Install postgres and create the following databases : event_dev, event_test using command
+
+createdb event_dev
+createdb event_test
+
+Install Rails, Ruby
+
+Check out the code, cd into project directory
+
+run 'bundle' on the command line
+
+run 'rake db:migrate' on the command line
+
+run 'rake db:seed' on the command line. This will populate the database.
+
+The database has been dumped into db/seeds.rb file.
+
+Mailer needs to be configured with a gmail id and password at config/environments/development.rb :
+
+  config.action_mailer.smtp_settings = {
+        :address              => "smtp.gmail.com",
+        :port                 => 587,
+        :user_name            => 'your-id@gmail.com',
+        :password             => 'your-password',
+        :authentication       => 'plain',
+        :enable_starttls_auto => true  }
+
+
