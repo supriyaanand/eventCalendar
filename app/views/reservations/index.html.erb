@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Calendar View', calendar_path %>
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Calendar', calendar_path %></li>
+  <li><%= link_to 'New reservation', new_reservation_path %></li>
+</ul>
 
-
-<h1>Listing Reservations</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Firstname</th>
@@ -34,7 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Reservation', new_reservation_path %>

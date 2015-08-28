@@ -20,4 +20,5 @@
 
 //= require jquery.rest
 //= require fullcalendar
+//= require bootstrap-sprockets
 //= require_tree .

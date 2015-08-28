@@ -1,7 +1,10 @@
-<p id="notice"><%= notice %></p>
-
+<ul class="nav nav-tabs" role="tablist">
+  <li><%= link_to 'View Reservations', reservations_path %></li>
+  <li class="active"><%= link_to 'New Reservation', new_reservation_path %></li>
+</ul>
+<br>
 <p>
-  <strong>Firstname:</strong>
+  <strong>Name:</strong>
   <%= @reservation.firstName %>
 </p>
 
@@ -11,12 +14,12 @@
 </p>
 
 <p>
-  <strong>Starttime:</strong>
+  <strong>From:</strong>
   <%= @reservation.start_time %>
 </p>
 
 <p>
-  <strong>Endtime:</strong>
+  <strong>To:</strong>
   <%= @reservation.end_time %>
 </p>
 
@@ -29,6 +32,6 @@
   <strong>Room:</strong>
   <%= @reservation.room.name %>
 </p>
-
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+<div class="btn-group">
+  <%= button_to 'Edit', edit_reservation_path(@reservation), :class => 'btn btn-primary', :method => :get %>
+</div>
