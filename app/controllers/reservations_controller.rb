@@ -53,10 +53,10 @@ class ReservationsController < ApplicationController
     respond_to do |format|
       if @reservation.update_attributes(:start_time => params[:event][:start_time], :end_time => params[:event][:end_time])
         format.html { redirect_to @reservation, notice: 'Reservation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @reservation }
+        format.json { render :show, status: :ok, location: @reservation, :formats => [:html] }
       else
         format.html { render :edit }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        #format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
     end
   end
