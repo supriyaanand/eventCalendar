@@ -51,7 +51,9 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     respond_to do |format|
-      if @reservation.update_attributes(:start_time => params[:event][:start_time], :end_time => params[:event][:end_time])
+      if request.format == :json
+        @reservation.update_attributes(:start_time => params[:event][:start_time], :end_time => params[:event][:end_time])
+      elsif @reservation.update_attributes(params[:reservation])
         format.html { redirect_to @reservation, notice: 'Reservation was successfully updated.' }
         format.json { render :show, status: :ok, location: @reservation, :formats => [:html] }
       else
