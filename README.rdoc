@@ -29,3 +29,8 @@ Mailer needs to be configured with a gmail id and password at config/environment
         :enable_starttls_auto => true  }
 
 
+Rails comes bundled with a library that provides web server services.
+To start the server, cd into project directory and run command :
+
+rails s -p <port-number>
+
